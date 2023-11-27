@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     $AuthorBiography = $_POST['AuthorBiography'];
 
     $sql = "update `authorstb` set '$id', name='$AuthorFullName', email='$AuthorEmail', address='$AuthorAddress', dateofbirth='$AuthorDateOfBirth' authorbio='$AuthorBiography' where id='$id'";
-    $result = mysqli_query($Dbconn, $sql);
+    $result = mysqli_query($Dbcon, $sql);
     if($result){
         //echo "Data inserted successfully";
         header('location:ViewAuthors.php');

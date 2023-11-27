@@ -7,7 +7,7 @@ if (isset($_GET['deleteid'])){
     if($result){
         // echo "Deleted successfully";
 
-        header('location:index.php');
+        header('ViewAuthors.php');
     }else{
         echo "Data not deleted";
     }

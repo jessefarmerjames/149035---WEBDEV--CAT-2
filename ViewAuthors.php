@@ -2,6 +2,7 @@
 require 'configs/DbConn.php';
 
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -35,7 +36,7 @@ require 'configs/DbConn.php';
     <?php
 
     $sql="Select * from authorstb";
-    $result=mysqli_query($Dbconn, $sql);
+    $result=mysqli_query($Dbcon, $sql);
     if($result){
         while($row=mysqli_fetch_assoc($result)){
             $AuthorId = $_POST['Author ID'];

@@ -8,9 +8,9 @@ if(isset($_POST['submit'])){
     $AuthorDateOfBirth = $_POST['DateOfBirth'];
     $AuthorAddress = $_POST['AuthorAddress'];
     $AuthorBiography = $_POST['AuthorBiography'];
-    //$AuthorPassword =$_POST['AuthorPassword'];
+    $AuthorSuspended =$_POST['Authors Status'];
 
-    $sql = "update `authorstb` set '$id', name='$AuthorFullName', email='$AuthorEmail', address='$AuthorAddress', dateofbirth='$AuthorDateOfBirth' authorbio='$AuthorBiography' where id='$id'";
+    $sql = "submit `authorstb` set '$id', name='$AuthorFullName', email='$AuthorEmail', address='$AuthorAddress', dateofbirth='$AuthorDateOfBirth' authorbio='$AuthorBiography' where id='$id'";
     $result = mysqli_query($Dbcon, $sql);
     if($result){
         echo "Data inserted successfully";
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
     <title>Authors Page</title>
 </head>
 <body>
-  <form method="post">
+  <form action="processes/AutRegistration.php" method="POST">
     <div class="mb-3">
     <label for="AuthorFullName" class="form-label">Authors Name</label>
     <input type="text" class="form-control" name="AuthorFullName" id="AuthorFullName" placeholder="Enter your full name">
@@ -54,11 +54,11 @@ if(isset($_POST['submit'])){
     <input type="date" name="AuthorsDateOfBirth" class="form-control" id="AuthorsDateOfBirth" placeholder="Enter your date of birth">
   </div>
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    
+    <input type="checkbox" class="form-check-input" id="SuspendAuthor">
+    <label class="form-check-label" for="SuspendAuthor">Suspend Author</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <input type="submit" name="submit" value="submit">
+  </form>
 
     
 </body>
